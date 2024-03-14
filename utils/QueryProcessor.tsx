@@ -16,8 +16,8 @@ export default function QueryProcessor(query: string): string {
   const regex = /(\d+)\s+plus\s+(\d+)/i;
   const match = query.match(regex);
   if (match) {
-    const num1 = parseInt(match[1]);
-    const num2 = parseInt(match[2]);
+    const num1 = parseInt(match[0]);
+    const num2 = parseInt(match[1]);
     const sum = num1 + num2;
     return('${sum}');
   }
