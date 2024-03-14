@@ -1,3 +1,10 @@
+function isPrime(num : number) {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num > 1;
+}
+
+
 export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
@@ -12,7 +19,7 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("name")){
     return ("Juan");
   }
-  const regex5 = /(\d+)\s+plus(\d+)\s+plus\s+(\d+)/i;
+  const regex5 = /(\d+)\s+plus\s+(\d+)\s+plus\s+(\d+)/i;
   const match5 = query.match(regex5);
   if (match5) {
     const num1 = parseInt(match5[1]);
