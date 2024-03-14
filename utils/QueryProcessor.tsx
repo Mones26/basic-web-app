@@ -30,5 +30,15 @@ export default function QueryProcessor(query: string): string {
     return(String(sum));
   }
 
+  const regex3 = /Which of the following numbers is the largest: (\d+)\s+(\d+)\s+(\d+)/i;
+  const match3 = query.match(regex3);
+  if (match3) {
+    const num1 = parseInt(match3[1]);
+    const num2 = parseInt(match3[2]);
+    const num3 = parseInt(match3[3]);
+    const sum = Math.max(num1, num2, num3);
+    return(String(sum));
+  }
+
   return "";
 }
