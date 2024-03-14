@@ -12,7 +12,7 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("name")){
     return ("Juan");
   }
-  const regex1 = /\d+ plug \d+/g;
+  const regex1 = /\d+ plus \d+/g;
   new RegExp(regex1, 'g')
   let match;
   
