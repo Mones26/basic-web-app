@@ -21,6 +21,14 @@ export default function QueryProcessor(query: string): string {
     const sum = (num1) + (num2);
     return(String(sum));
   }
+  const regex4 = /(\d+)\s+minus\s+(\d+)/i;
+  const match4 = query.match(regex4);
+  if (match4) {
+    const num1 = parseInt(match4[1]);
+    const num2 = parseInt(match4[2]);
+    const sum = (num1) - (num2);
+    return(String(sum));
+  }
   const regex2 = /(\d+)\s+multiplied\s+by\s+(\d+)/i;
   const match2 = query.match(regex2);
   if (match2) {
@@ -30,7 +38,7 @@ export default function QueryProcessor(query: string): string {
     return(String(sum));
   }
 
-  const regex3 = /largest:\s+(\d+),\s+(\d+),\s+(\d+)/i;
+  const regex3 = /Which of the following numbers is the largest:\s+(\d+),\s+(\d+),\s+(\d+)/i;
   const match3 = query.match(regex3);
   if (match3) {
     const num1 = parseInt(match3[1]);
