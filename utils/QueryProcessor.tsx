@@ -12,6 +12,15 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("name")){
     return ("Juan");
   }
+  const regex5 = /(\d+)\s+plus(\d+)\s+plus\s+(\d+)/i;
+  const match5 = query.match(regex5);
+  if (match5) {
+    const num1 = parseInt(match5[1]);
+    const num2 = parseInt(match5[2]);
+    const num3 = parseInt(match5[3]);
+    const sum = (num1) + (num2) + (num3);
+    return(String(sum));
+  }
 
   const regex = /(\d+)\s+plus\s+(\d+)/i;
   const match = query.match(regex);
