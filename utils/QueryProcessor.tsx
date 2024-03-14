@@ -64,5 +64,29 @@ export default function QueryProcessor(query: string): string {
     return(String(max));
   }
 
+  const regex6 = /Which of the following numbers are primes:\s+(\d+),\s+(\d+),\s+(\d+)\s+,\s+(\d+),\s+(\d+)/i;
+  const match6 = query.match(regex6);
+  if (match6) {
+    const num1 = (parseInt(match6[1]));
+    const num2 = (parseInt(match6[2]));
+    const num3 = (parseInt(match6[3]));
+    const num4 = (parseInt(match6[4]));
+    const num5 = (parseInt(match6[5]));
+
+    if (isPrime(parseInt(match6[1]))){
+      return String(num1);
+    }
+    else if (isPrime(parseInt(match6[2]))){
+      return String(num2);
+    }else if (isPrime(parseInt(match6[3]))){
+      return String(num3);
+    }
+    else if (isPrime(parseInt(match6[4]))){
+      return String(num4);
+    }if (isPrime(parseInt(match6[5]))){
+      return String(num5);
+    }
+  }
+
   return "";
 }
