@@ -88,5 +88,13 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  const regex7 = /What is (\d+) to the power of (\d+))?/i;
+  const match7 = query.match(regex7);
+  if (match7) {
+    const num1 = parseInt(match7[1]);
+    const num2 = parseInt(match7[2]);
+    return(String(Math.pow(num1, num2)));
+  }
+
   return "";
 }
